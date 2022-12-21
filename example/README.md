@@ -1,16 +1,5 @@
-# example
+# Exemplo
+Este é um exemplo do pacote Flutter que utiliza o `provider` e o `flutter_dotenv` como dependências.
 
-Example
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Configuração
+Para usar este pacote, é preciso renomear o arquivo `.env-sample` para `.env` e adicionar a API token correta dentro dele. Esta token será usada na API do OpenAI.

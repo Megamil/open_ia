@@ -7,6 +7,8 @@ Também é feito usando MVVM
 
 Para utilizar esta biblioteca, basta instanciar a classe `IGViewModel` e chamar o método `generateImage(input)` passando o input desejado como parâmetro. Em seguida, basta ficar de olho nas propriedades `imageUrl`, `errorMessage` e `loading` para obter o resultado da operação.
 
+![Screenshot](./screens/sample.png)
+
 Exemplo:
 ```
 final viewModel = IGViewModel(IGRepositoryImpl(
