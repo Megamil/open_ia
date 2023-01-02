@@ -1,30 +1,31 @@
 # Biblioteca para gerar imagens com base em input do usuário usando a API da OpenAI
 
-Esta biblioteca permite que você gere imagens com base em um input de texto fornecido pelo usuário, utilizando a API da OpenAI. Além disso, o input é traduzido do português para o inglês com a biblioteca do Google Translate antes de ser enviado para a API.
-Também é feito usando MVVM
+Esta biblioteca permite que você crie imagens com base em um input de texto fornecido pelo usuário, utilizando a API da OpenAI.
+Também é feito usando MVVM e Clean Architecture
 
 ## Como usar
 
 Para utilizar esta biblioteca, basta instanciar a classe `IGViewModel` e chamar o método `generateImage(input)` passando o input desejado como parâmetro. Em seguida, basta ficar de olho nas propriedades `imageUrl`, `errorMessage` e `loading` para obter o resultado da operação.
 
-![Screenshot](./screens/sample.png)
+![Screenshot](https://github.com/Megamil/open_ia/raw/main/screens/sample.png)
 
 Exemplo:
 ```
-final viewModel = IGViewModel(IGRepositoryImpl(
-  IGDataSourceImpl('SUA_API_KEY_AQUI'),
-  GoogleTranslate.initialize(apiKey: "SUA_API_KEY_AQUI", targetLanguage: "en");,
-));
+  final viewModel = IGViewModel(
+    IGRepositoryImpl(
+        IGDataSourceImpl('SUA_API_KEY_AQUI')
+    )
+  );
 
-await viewModel.generateImage('Goku fazendo a fusão com Yusuke Urameshi');
+  await viewModel.generateImage('Goku fazendo a fusão com Yusuke Urameshi');
 
-if (viewModel.loading) {
-  print('Aguarde enquanto a imagem é gerada...');
-} else if (viewModel.errorMessage != null) {
-  print('Ocorreu um erro ao gerar a imagem: ${viewModel.errorMessage}');
-} else {
-  print('A imagem foi gerada com sucesso: ${viewModel.imageUrl}');
-}
+  if (viewModel.loading ?? false) {
+    print('Aguarde enquanto a imagem é gerada...');
+  } else if (viewModel.errorMessage != null) {
+    print('Ocorreu um erro ao gerar a imagem: ${viewModel.errorMessage}');
+  } else {
+    print('A imagem foi gerada com sucesso: ${viewModel.imageUrl}');
+  }
 ```
 ## Instalação
 Para instalar esta biblioteca, adicione o seguinte código ao arquivo pubspec.yaml do seu projeto:
